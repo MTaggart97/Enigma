@@ -7,11 +7,16 @@ using std::endl;
 using Enigma::PlugBoard;
 
 Enigma::PlugBoard::PlugBoard(const std::string file) {
+    // TODO: Throw an exception if file does not exist
     read_file(file, plugboard);
 }
 
 char Enigma::PlugBoard::get(const char x) {
-    return plugboard[char_to_int(x)];
+    int index = char_to_int(x);
+    if (index < 0 || index >= 27) {
+        index = 26;
+    }
+    return plugboard[index];
 }
 
 int Enigma::PlugBoard::char_to_int(char c) {
@@ -33,5 +38,6 @@ void Enigma::PlugBoard::read_file(const std::string file, char* pb) {
         pb[char_to_int(key)] = value;
         pb[char_to_int(value)] = key;
     }
+    pb[26] = ' ';
     my_file.close();
 }

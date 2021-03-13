@@ -6,7 +6,11 @@
 namespace Enigma {
     class PlugBoard {
     private:
-        char plugboard[26];
+        /**
+         * Stores all the letters of the alphabet and 
+         * the space character in the final position.
+         */ 
+        char plugboard[27];
         /**
          * Takes a character and returns its position in the 
          * alphabet. It is assumed that the characters encoding is
