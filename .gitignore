@@ -1,2 +1,5 @@
 # IDE Settings
 .vscode
+
+# Build Files
+build
