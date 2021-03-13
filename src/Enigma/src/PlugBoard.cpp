@@ -1,4 +1,5 @@
 #include "src/Enigma/headers/PlugBoard.h"
+#include "src/Enigma/src/FileNotFound.cpp"
 #include <iostream>
 #include <fstream>
 
@@ -6,8 +7,7 @@ using std::cout;
 using std::endl;
 using Enigma::PlugBoard;
 
-Enigma::PlugBoard::PlugBoard(const std::string file) {
-    // TODO: Throw an exception if file does not exist
+Enigma::PlugBoard::PlugBoard(const std::string* file) noexcept(false) {
     read_file(file, plugboard);
 }
 
@@ -23,12 +23,11 @@ int Enigma::PlugBoard::char_to_int(char c) {
     return ((int) c) - 97;
 }
 
-void Enigma::PlugBoard::read_file(const std::string file, char* pb) {
+void Enigma::PlugBoard::read_file(const std::string* file, char* pb)  noexcept(false) {
     std::ifstream my_file;
-    my_file.open(file);
+    my_file.open(*file);
     if (!my_file) {
-        cout << "File not valid" << endl;
-        return;
+        throw Enigma::FileNotFound(file);
     }
     std::string line;
     while (std::getline(my_file, line)) {

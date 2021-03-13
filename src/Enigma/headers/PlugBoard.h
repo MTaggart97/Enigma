@@ -31,12 +31,13 @@ namespace Enigma {
          * the plugboard implements. Note that only half of 
          * the alphabet is needed as the mapping is two-way.
          * 
-         * @param   std::string     Name of file
+         * @throws  Enigma::FileNotFound if file is not found
+         * @param   std::string*    Name of file
          * @param   char*           Array to store mappings
          */
-        void read_file(const std::string, char*);
+        void read_file(const std::string*, char*) noexcept(false);
     public:
-        PlugBoard(const std::string);
+        PlugBoard(const std::string*) noexcept(false);
         /**
          * This will get the output of the plugboard
          * for the given character.

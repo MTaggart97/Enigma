@@ -1,11 +1,19 @@
 #include <iostream>
 #include "Enigma/headers/PlugBoard.h"
+#include "src/Enigma/src/FileNotFound.cpp"
 
 using Enigma::PlugBoard;
 
 int main(const int , const char**) {
     const std::string file{"../src/resources/plugboard1.txt"};
-    PlugBoard pb{file};
+    PlugBoard* pb;
+
+    try {
+        pb = new PlugBoard(&file);
+    } catch(const Enigma::FileNotFound &e) {
+        std::cout << e.what() << e.get_file()->c_str() << std::endl;
+        exit(EXIT_FAILURE);
+    }
 
     std::string text;
     for(;;) {
@@ -19,8 +27,10 @@ int main(const int , const char**) {
                 std::cout << "'\\' detected, exiting..." << std::endl;
                 return 0;
             }
-            std::cout << pb.get(text.at(i));
+            std::cout << pb->get(text.at(i));
         }
         std::cout << std::endl;
     }
+
+    delete pb;
 }
