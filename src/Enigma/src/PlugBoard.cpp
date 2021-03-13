@@ -14,10 +14,6 @@ char Enigma::PlugBoard::get(const char x) {
     return plugboard[char_to_int(x)];
 }
 
-char Enigma::PlugBoard::int_to_char(int i) {
-    return (char) (i + 97);
-}
-
 int Enigma::PlugBoard::char_to_int(char c) {
     return ((int) c) - 97;
 }
