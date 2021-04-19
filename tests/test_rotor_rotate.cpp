@@ -7,7 +7,10 @@ int main() {
 
     Rotor rotor1{&file};
 
+    // Rotate 3 times
     char e = rotor1.get('a');
+    char k = rotor1.get('c');
+    char o = rotor1.get('o');
 
-    return (e != 'e');
+    return (e != 'e' || k != 'k'  || o != 'o');
 }
