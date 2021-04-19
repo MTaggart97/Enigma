@@ -19,6 +19,7 @@ char Enigma::PlugBoard::get(const char x) {
     return plugboard[index];
 }
 
+// TODO: Move to a utility class
 int Enigma::PlugBoard::char_to_int(char c) {
     return ((int) c) - 97;
 }

@@ -1,6 +1,6 @@
 Notch:
     r
-Permtations:
+Permutations:
     a: e
     b: k
     c: m

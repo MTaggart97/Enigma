@@ -10,8 +10,10 @@ add_library(
 	EnigmaLib
 	STATIC
 	src/Enigma/src/PlugBoard.cpp
+	src/Enigma/src/Rotor.cpp
 )
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Plugboard.h)
+set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Rotor.h)
 target_include_directories(EnigmaLib PUBLIC .)
 
 # Can use this if you want to bundle everything together
