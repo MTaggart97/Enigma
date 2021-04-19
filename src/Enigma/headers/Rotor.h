@@ -9,6 +9,7 @@ namespace Enigma {
     private:
         char rotor[26];
         int notch;
+        int counter;
         const std::string NOTCH = "Notch:";
         const std::string PERMUTATIONS = "Permutations:";
         void rotate();

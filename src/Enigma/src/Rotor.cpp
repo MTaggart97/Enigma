@@ -20,15 +20,20 @@ std::string& trim(std::string& str, const std::string& chars = "\t\n\v\f\r ") {
 }
 
 Rotor::Rotor(const std::string* file) {
+    counter = 0;
     read_file(file, rotor, notch);
 }
 
 char Rotor::get(const char c) {
-    return rotor[char_to_int(c)];
+    // Ensure index is > 0 and < 26
+    int index = (26 + (char_to_int(c) - counter) % 26) % 26;
+    char ch = rotor[index];
+    rotate();
+    return ch;
 }
 
 void Rotor::rotate() {
-
+    ++counter;
 }
 
 int Rotor::char_to_int(char c) {
