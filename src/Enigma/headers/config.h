@@ -48,6 +48,7 @@ struct REFLECTOR_CONFIG {
 #define ENIGMA_ROTOR_3 { {'b', 'd', 'f', 'h', 'j', 'l', 'c', 'p', 'r', 't', 'x', 'v', 'z', 'n', 'y', 'e', 'i', 'w', 'g', 'a', 'k', 'm', 'u', 's', 'q', 'o'}, 'v', 0 }
 
 #define PLUGBOARD { { {'a','b'}, {'c','d'}, {'e','f'}, {'g','h'}, {'i','j'}, {'k','l'}, {'m','n'}, {'o','p'}, {'q','r'}, {'s','t'}, {'u','v'}, {'w','x'}, {'y','z'} } }
+#define PLUGBOARD_MISSING { { {'a','b'}, {'c','d'}, {'e','f'}, {'g','h'}, {'i','j'}, {'k','l'} } }
 
 #define REFLECTOR { { {'a','b'}, {'c','d'}, {'e','f'}, {'g','h'}, {'i','j'}, {'k','l'}, {'m','n'}, {'o','p'}, {'q','r'}, {'s','t'}, {'u','v'}, {'w','x'}, {'y','z'} } }
 

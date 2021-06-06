@@ -12,6 +12,10 @@ namespace Enigma {
          * where a and b are swapped.
          */ 
         char plugboard[13][2];
+        /**
+         * Number of pairs of elements that are swapped.
+         */
+        size_t length;
     public:
         PlugBoard(const PLUGBOARD_CONFIG*) noexcept(false);
         /**
