@@ -14,6 +14,7 @@ add_library(
 )
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Plugboard.h)
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Rotor.h)
+set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Reflector.h)
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/config.h)
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/utils.h)
 target_include_directories(EnigmaLib PUBLIC .)

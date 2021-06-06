@@ -26,10 +26,20 @@ struct ROTOR_CONFIG {
 /**
  * Struct containing the plugboard configuration.
  * The plugboard just swaps letters. The wiring
- * is just an array containing a string of lenght
- * 2, where the 2 letters are swapped.
+ * is just an array containing a string of length
+ * 2, where the 2 letters are swapped. It is possible
+ * for a character not to be re-wired.
  */
 struct PLUGBOARD_CONFIG {
+    char wiring[13][2];
+};
+
+/**
+ * Struct containing the reflector configuration. It
+ * is very similar to a plugboard except that all
+ * characters are swapped.
+ */
+struct REFLECTOR_CONFIG {
     char wiring[13][2];
 };
 
@@ -38,5 +48,7 @@ struct PLUGBOARD_CONFIG {
 #define ENIGMA_ROTOR_3 { {'b', 'd', 'f', 'h', 'j', 'l', 'c', 'p', 'r', 't', 'x', 'v', 'z', 'n', 'y', 'e', 'i', 'w', 'g', 'a', 'k', 'm', 'u', 's', 'q', 'o'}, 'v', 0 }
 
 #define PLUGBOARD { { {'a','b'}, {'c','d'}, {'e','f'}, {'g','h'}, {'i','j'}, {'k','l'}, {'m','n'}, {'o','p'}, {'q','r'}, {'s','t'}, {'u','v'}, {'w','x'}, {'y','z'} } }
+
+#define REFLECTOR { { {'a','b'}, {'c','d'}, {'e','f'}, {'g','h'}, {'i','j'}, {'k','l'}, {'m','n'}, {'o','p'}, {'q','r'}, {'s','t'}, {'u','v'}, {'w','x'}, {'y','z'} } }
 
 #endif
