@@ -4,10 +4,11 @@
 using Enigma::PlugBoard;
 
 int main() {
-    PLUGBOARD_CONFIG p_config = PLUGBOARD;
+    PLUGBOARD_CONFIG p_config = PLUGBOARD_MISSING;
 
     PlugBoard pb{&p_config};
-    char space = pb.get(' ');
-    char space1 = pb.get('5');
-    return (space != ' ' || space1 != ' ');
+    char b = pb.get('a');
+    char z = pb.get('z');
+
+    return (b != 'b' || z != 'z');
 }
