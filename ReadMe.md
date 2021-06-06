@@ -4,6 +4,8 @@ This is my attempt at creating the [Enigma Machine](https://en.wikipedia.org/wik
 
 Rotor configurations can be found [here](https://www.codesandciphers.org.uk/enigma/rotorspec.htm).
 
+A nice simulator can be found [here](https://piotte13.github.io/enigma-cipher/).
+
 ## Goals
 
 * To become more familiar with the C++ Programming Language

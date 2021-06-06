@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "src/Enigma/headers/config.h"
 
 namespace Enigma {
     class Rotor {
@@ -13,12 +14,11 @@ namespace Enigma {
         const std::string NOTCH = "Notch:";
         const std::string PERMUTATIONS = "Permutations:";
         void rotate();
-        void read_file(const std::string*, char*, int&);
         int char_to_int(char);
         void set_notch(std::ifstream&, int&);
         void set_rotor(std::ifstream&, char*);
     public:
-        Rotor(const std::string*) noexcept(false);
+        Rotor(const ROTOR_CONFIG*) noexcept(false);
         char get(const char);
     };
 }

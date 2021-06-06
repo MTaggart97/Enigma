@@ -14,10 +14,10 @@ add_library(
 )
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Plugboard.h)
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Rotor.h)
+set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/config.h)
 target_include_directories(EnigmaLib PUBLIC .)
 
 # Can use this if you want to bundle everything together
-# add_executable(Enigma src/main.cpp src/CustomMath.cpp src/CustomMath.h)
 add_executable(Enigma src/main.cpp)
 target_link_libraries(Enigma EnigmaLib)
 target_include_directories(Enigma PUBLIC .)

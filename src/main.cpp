@@ -1,19 +1,12 @@
 #include <iostream>
 #include "Enigma/headers/PlugBoard.h"
-#include "src/Enigma/src/FileNotFound.cpp"
+#include "src/Enigma/headers/config.h"
 
 using Enigma::PlugBoard;
 
 int main(const int , const char**) {
-    const std::string file{"../src/resources/plugboard1.txt"};
-    PlugBoard* pb;
-
-    try {
-        pb = new PlugBoard(&file);
-    } catch(const Enigma::FileNotFound &e) {
-        std::cout << e.what() << e.get_file()->c_str() << std::endl;
-        exit(EXIT_FAILURE);
-    }
+    PLUGBOARD_CONFIG p_config = PLUGBOARD;
+    PlugBoard* pb = new PlugBoard(&p_config);
 
     std::string text;
     for(;;) {

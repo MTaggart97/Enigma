@@ -2,15 +2,16 @@
 #define _PLUGBOARD_H
 
 #include <iostream>
+#include "src/Enigma/headers/config.h"
 
 namespace Enigma {
     class PlugBoard {
     private:
         /**
-         * Stores all the letters of the alphabet and 
-         * the space character in the final position.
+         * Stores the plug board settings in the form 'ab',
+         * where a and b are swapped.
          */ 
-        char plugboard[27];
+        char plugboard[13][2];
         /**
          * Takes a character and returns its position in the 
          * alphabet. It is assumed that the characters encoding is
@@ -21,23 +22,8 @@ namespace Enigma {
          * @return  The position of the character in the alphabet
          */
         int char_to_int(char);
-        /**
-         * Reads a file and stores contents in character 
-         * array. The file should be of the form: 
-         * 
-         * <character>: <character>
-         * 
-         * where the characters correspond to the mapping 
-         * the plugboard implements. Note that only half of 
-         * the alphabet is needed as the mapping is two-way.
-         * 
-         * @throws  Enigma::FileNotFound if file is not found
-         * @param   std::string*    Name of file
-         * @param   char*           Array to store mappings
-         */
-        void read_file(const std::string*, char*) noexcept(false);
     public:
-        PlugBoard(const std::string*) noexcept(false);
+        PlugBoard(const PLUGBOARD_CONFIG*) noexcept(false);
         /**
          * This will get the output of the plugboard
          * for the given character.

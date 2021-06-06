@@ -1,5 +1,5 @@
 #include "src/Enigma/headers/PlugBoard.h"
-#include "src/Enigma/src/FileNotFound.cpp"
+#include "src/Enigma/headers/config.h"
 #include <iostream>
 #include <fstream>
 
@@ -7,16 +7,27 @@ using std::cout;
 using std::endl;
 using Enigma::PlugBoard;
 
-Enigma::PlugBoard::PlugBoard(const std::string* file) noexcept(false) {
-    read_file(file, plugboard);
+char int_to_char(int x);
+
+Enigma::PlugBoard::PlugBoard(const PLUGBOARD_CONFIG* p_config) noexcept(false) {
+    // Copy each element into array (as data is in a struct)
+    for (int i = 0; i < 13; i++) {
+        for (int j = 0; j < 13; j++) {
+            plugboard[i][0] = p_config->wiring[i][0];
+            plugboard[i][1] = p_config->wiring[i][1];
+        }
+    }
 }
 
 char Enigma::PlugBoard::get(const char x) {
-    int index = char_to_int(x);
-    if (index < 0 || index >= 27) {
-        index = 26;
+    for (int i = 0; i < 13; i++) {
+        if (plugboard[i][0] == x) {
+            return plugboard[i][1];
+        } else if (plugboard[i][1] == x) {
+            return plugboard[i][0];
+        }
     }
-    return plugboard[index];
+    return ' ';
 }
 
 // TODO: Move to a utility class
@@ -24,20 +35,6 @@ int Enigma::PlugBoard::char_to_int(char c) {
     return ((int) c) - 97;
 }
 
-void Enigma::PlugBoard::read_file(const std::string* file, char* pb)  noexcept(false) {
-    std::ifstream my_file;
-    my_file.open(*file);
-    if (!my_file) {
-        throw Enigma::FileNotFound(file);
-    }
-    std::string line;
-    while (std::getline(my_file, line)) {
-        const char key = line.at(0);
-        const char value = line.at(line.size() - 1);
-
-        pb[char_to_int(key)] = value;
-        pb[char_to_int(value)] = key;
-    }
-    pb[26] = ' ';
-    my_file.close();
+char int_to_char(int x) {
+    return (char) (x + 97);
 }

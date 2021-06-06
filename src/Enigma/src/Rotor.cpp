@@ -1,5 +1,5 @@
 #include "src/Enigma/headers/Rotor.h"
-#include "src/Enigma/src/FileNotFound.cpp"
+#include "src/Enigma/headers/config.h"
 #include <fstream>
 
 using Enigma::Rotor;
@@ -19,9 +19,12 @@ std::string& trim(std::string& str, const std::string& chars = "\t\n\v\f\r ") {
     return ltrim(rtrim(str, chars), chars);
 }
 
-Rotor::Rotor(const std::string* file) {
-    counter = 0;
-    read_file(file, rotor, notch);
+Rotor::Rotor(const ROTOR_CONFIG* r_config) {
+    for (int i = 0; i < 26; i++) {
+        rotor[i] = r_config->wiring[i];
+    }
+    notch = r_config->notch;
+    counter = r_config->offset;
 }
 
 char Rotor::get(const char c) {
@@ -38,24 +41,6 @@ void Rotor::rotate() {
 
 int Rotor::char_to_int(char c) {
     return ((int) c) - 97;
-}
-
-void Rotor::read_file(const std::string* file, char* rt, int& n) {
-    std::ifstream my_file;
-    my_file.open(*file);
-    if (!my_file) {
-        throw Enigma::FileNotFound(file);
-    }
-    std::string line;
-    while (std::getline(my_file, line)) {
-        // Check if line is Notch or Permtations
-        if (Rotor::NOTCH.compare(line)) {
-            set_notch(my_file, n);
-        } else if (Rotor::PERMUTATIONS.compare(line)) {
-            set_rotor(my_file, rt);
-        }
-    }
-    my_file.close();
 }
 
 void Rotor::set_notch(std::ifstream& file, int& n) {
