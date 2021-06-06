@@ -7,8 +7,6 @@ using std::cout;
 using std::endl;
 using Enigma::PlugBoard;
 
-char int_to_char(int x);
-
 Enigma::PlugBoard::PlugBoard(const PLUGBOARD_CONFIG* p_config) noexcept(false) {
     // Copy each element into array (as data is in a struct)
     for (int i = 0; i < 13; i++) {
