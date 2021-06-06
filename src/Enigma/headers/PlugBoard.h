@@ -12,16 +12,6 @@ namespace Enigma {
          * where a and b are swapped.
          */ 
         char plugboard[13][2];
-        /**
-         * Takes a character and returns its position in the 
-         * alphabet. It is assumed that the characters encoding is
-         * such that 'a' = 97, 'b' = 98 etc. This only works for 
-         * lower case letters.
-         *
-         * @param   char    Character to convert
-         * @return  The position of the character in the alphabet
-         */
-        int char_to_int(char);
     public:
         PlugBoard(const PLUGBOARD_CONFIG*) noexcept(false);
         /**

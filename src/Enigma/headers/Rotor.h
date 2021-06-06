@@ -8,17 +8,30 @@
 namespace Enigma {
     class Rotor {
     private:
+        /**
+         * Stores the rotor configuration.
+         */
         char rotor[26];
+        /**
+         * Notch used to indicate when the
+         * rotor sends a signal to the next
+         * rotor to rotate.
+         */
         int notch;
+        /**
+         * Counter used to keep track of the
+         * rotors position.
+         */
         int counter;
-        const std::string NOTCH = "Notch:";
-        const std::string PERMUTATIONS = "Permutations:";
+        /**
+         * Rotates the rotor.
+         */
         void rotate();
-        int char_to_int(char);
-        void set_notch(std::ifstream&, int&);
-        void set_rotor(std::ifstream&, char*);
     public:
         Rotor(const ROTOR_CONFIG*) noexcept(false);
+        /**
+         * Given a character, encode it using this rotor.
+         */
         char get(const char);
     };
 }

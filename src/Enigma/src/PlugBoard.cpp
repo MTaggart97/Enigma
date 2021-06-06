@@ -29,12 +29,3 @@ char Enigma::PlugBoard::get(const char x) {
     }
     return ' ';
 }
-
-// TODO: Move to a utility class
-int Enigma::PlugBoard::char_to_int(char c) {
-    return ((int) c) - 97;
-}
-
-char int_to_char(int x) {
-    return (char) (x + 97);
-}
