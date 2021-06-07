@@ -24,3 +24,12 @@ char Rotor::get(const char c, const bool to_rotate) {
 void Rotor::rotate() {
     ++counter;
 }
+
+bool Rotor::on_notch() {
+    // Using mod on the off chance that the counter is not zeroed
+    if (counter % notch == 0) {
+        counter = 0;
+        return true;
+    }
+    return false;
+}
