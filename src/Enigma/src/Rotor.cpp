@@ -9,7 +9,7 @@ Rotor::Rotor(const ROTOR_CONFIG* r_config) {
     for (int i = 0; i < 26; i++) {
         rotor[i] = r_config->wiring[i];
     }
-    notch = r_config->notch;
+    notch = Enigma::Utils::char_to_int(r_config->notch);
     counter = r_config->offset;
 }
 

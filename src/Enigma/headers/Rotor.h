@@ -30,9 +30,11 @@ namespace Enigma {
     public:
         Rotor(const ROTOR_CONFIG*) noexcept(false);
         /**
-         * Given a character, encode it using this rotor.
+         * Given a character, encode it using this rotor. If
+         * the second parameter is true, the rotor will
+         * rotate.
          */
-        char get(const char);
+        char get(const char, const bool);
     };
 }
 
