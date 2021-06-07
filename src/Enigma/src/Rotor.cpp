@@ -13,11 +13,11 @@ Rotor::Rotor(const ROTOR_CONFIG* r_config) {
     counter = r_config->offset;
 }
 
-char Rotor::get(const char c) {
+char Rotor::get(const char c, const bool to_rotate) {
     // Ensure index is > 0 and < 26
     int index = (26 + (Enigma::Utils::char_to_int(c) - counter) % 26) % 26;
     char ch = rotor[index];
-    rotate();
+    if (to_rotate) rotate();
     return ch;
 }
 
