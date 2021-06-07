@@ -1,8 +1,6 @@
 #ifndef _ROTOR_H
 #define _ROTOR_H
 
-#include <iostream>
-#include <fstream>
 #include "src/Enigma/headers/config.h"
 
 namespace Enigma {
