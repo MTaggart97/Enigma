@@ -9,18 +9,27 @@ Rotor::Rotor(const ROTOR_CONFIG* r_config) {
     for (int i = 0; i < 26; i++) {
         rotor[i] = r_config->wiring[i];
     }
-    notch = r_config->notch;
+    notch = Enigma::Utils::char_to_int(r_config->notch);
     counter = r_config->offset;
 }
 
-char Rotor::get(const char c) {
+char Rotor::get(const char c, const bool to_rotate) {
     // Ensure index is > 0 and < 26
     int index = (26 + (Enigma::Utils::char_to_int(c) - counter) % 26) % 26;
     char ch = rotor[index];
-    rotate();
+    if (to_rotate) rotate();
     return ch;
 }
 
 void Rotor::rotate() {
     ++counter;
+}
+
+bool Rotor::on_notch() {
+    // Using mod on the off chance that the counter is not zeroed
+    if (counter % notch == 0) {
+        counter = 0;
+        return true;
+    }
+    return false;
 }
