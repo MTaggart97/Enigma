@@ -59,5 +59,6 @@ struct MACHINE_CONFIG {
 #define PLUGBOARD_MISSING { { {'a','b'}, {'c','d'}, {'e','f'}, {'g','h'}, {'i','j'}, {'k','l'} } }
 
 #define REFLECTOR { { {'a','b'}, {'c','d'}, {'e','f'}, {'g','h'}, {'i','j'}, {'k','l'}, {'m','n'}, {'o','p'}, {'q','r'}, {'s','t'}, {'u','v'}, {'w','x'}, {'y','z'} } }
+#define REFLECTOR_B { { {'a','y'}, {'b','r'}, {'c','u'}, {'d','h'}, {'e','q'}, {'f','s'}, {'g','l'}, {'i','p'}, {'j','x'}, {'k','n'}, {'m','o'}, {'t','z'}, {'v','w'} } }
 
 #endif
