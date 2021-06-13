@@ -36,13 +36,25 @@ namespace Enigma {
          * @param   bool    Wether or not to rotate
          * @return  Encrypted character
          */
-        char get(const char, const bool);
+        char encrypt(const char, const bool);
         /**
          * Checks if the rotor is on the notch or not.
          * 
          * @return  True if notched, false otherwise
          */
         bool on_notch();
+        /**
+         * Get the index of a given character in the rotor.
+         * This takes into account the rotation of the rotor.
+         * Returns the length of the rotor if the character
+         * is not found
+         * 
+         * @param   c   Character to get index of
+         * @return  The index of the character
+         */
+        int get_index(char c);
+
+        char get(int pos);
     };
 }
 

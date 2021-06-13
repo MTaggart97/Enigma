@@ -1,7 +1,6 @@
 #ifndef _REFLECTOR_H
 #define _REFLECTOR_H
 
-#include <iostream>
 #include "src/Enigma/headers/config.h"
 
 namespace Enigma {

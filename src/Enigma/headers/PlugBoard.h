@@ -1,7 +1,7 @@
 #ifndef _PLUGBOARD_H
 #define _PLUGBOARD_H
 
-#include <iostream>
+#include <cstddef>
 #include "src/Enigma/headers/config.h"
 
 namespace Enigma {

@@ -13,6 +13,7 @@ add_library(
 	src/Enigma/src/Rotor.cpp
 	src/Enigma/src/Reflector.cpp
 	src/Enigma/src/EnigmaMachine.cpp
+	src/Enigma/src/utils.cpp
 )
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Plugboard.h)
 set_target_properties(EnigmaLib PROPERTIES PUBLIC_HEADER src/Enigma/headers/Rotor.h)

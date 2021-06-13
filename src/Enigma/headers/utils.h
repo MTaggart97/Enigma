@@ -16,9 +16,7 @@ namespace Enigma {
          * @param   char    Character to convert
          * @return  The position of the character in the alphabet
          */
-        int char_to_int(char c) {
-            return ((int) c) - 97;
-        }
+        int char_to_int(char c);
         /**
          * Takes an integer and returns the letter (in lower case)
          * in that position. If out of range, a black space is
@@ -27,9 +25,7 @@ namespace Enigma {
          * @param   int Position of character in alphabet
          * @return  Character in alphabet or space
          */
-        char int_to_char(int x) {
-            return (0 > x || x < 26) ? ' ' : (char) (x + 97);
-        }
+        char int_to_char(int x);
     }
 }
 
