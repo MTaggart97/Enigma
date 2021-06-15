@@ -1,5 +1,8 @@
 # IDE Settings
 .vscode
 
+# Files for demoing machine
+demo
+
 # Build Files
 build

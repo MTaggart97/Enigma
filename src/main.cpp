@@ -7,7 +7,12 @@
 
 using Enigma::EnigmaMachine;
 
-int main(const int , const char**) {
+int main(const int argc, const char** argv) {
+    if (argc != 2) {
+        std::cout << "Usage: " << argv[0] << " 'text to encrypt'" << std::endl;
+        return 1;
+    }
+    // Set up Enigma Machine
     PLUGBOARD_CONFIG plugboard_config = PLUGBOARD;
     ROTOR_CONFIG rotor_config_1 = ENIGMA_ROTOR_1;
     ROTOR_CONFIG rotor_config_2 = ENIGMA_ROTOR_2;
@@ -17,20 +22,11 @@ int main(const int , const char**) {
 
     EnigmaMachine machine{&m_config};
 
-    std::string text;
-    for(;;) {
-        std::cout << "Enter the text you want to encrypt\n";
-        std::cout << "Press '\\' and Enter to exit" << std::endl;
-        std::getline(std::cin, text);
-        std::cout << "Encrypted message is\n";
-        for (size_t i = 0; i < text.size(); i++) {
-            if (text.at(i) == '\\') {
-                std::cout << std::endl;
-                std::cout << "'\\' detected, exiting..." << std::endl;
-                return 0;
-            }
-            std::cout << machine.encrypt(text.at(i));
-        }
-        std::cout << std::endl;
+    size_t pos = 0;
+    while(argv[1][pos]) {
+        std::cout << machine.encrypt(argv[1][pos]);
+        ++pos;
     }
+    std::cout << std::endl;
+    return 0;
 }
