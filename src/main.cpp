@@ -3,7 +3,7 @@
 #include "Enigma/headers/Rotor.h"
 #include "Enigma/headers/Reflector.h"
 #include "Enigma/headers/EnigmaMachine.h"
-#include "src/Enigma/headers/config.h"
+#include "config.h"
 
 using Enigma::EnigmaMachine;
 

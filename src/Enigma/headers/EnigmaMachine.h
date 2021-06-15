@@ -1,10 +1,10 @@
 #ifndef _ENIGMA_MACHINE_H
 #define _ENIGMA_MACHINE_H
 
-#include "src/Enigma/headers/config.h"
-#include "src/Enigma/headers/PlugBoard.h"
-#include "src/Enigma/headers/Rotor.h"
-#include "src/Enigma/headers/Reflector.h"
+#include "config.h"
+#include "PlugBoard.h"
+#include "Rotor.h"
+#include "Reflector.h"
 
 using Enigma::PlugBoard;
 using Enigma::Rotor;
@@ -20,6 +20,7 @@ namespace Enigma {
         Reflector* reflector;
     public:
         EnigmaMachine(const MACHINE_CONFIG*);
+        ~EnigmaMachine();
         char encrypt(const char);
     };
 }

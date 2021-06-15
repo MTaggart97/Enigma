@@ -1,11 +1,9 @@
-#include "src/Enigma/headers/EnigmaMachine.h"
-#include "src/Enigma/headers/PlugBoard.h"
-#include "src/Enigma/headers/Rotor.h"
-#include "src/Enigma/headers/Reflector.h"
-#include "src/Enigma/headers/config.h"
-#include "src/Enigma/headers/utils.h"
-
-#include <iostream>
+#include "EnigmaMachine.h"
+#include "PlugBoard.h"
+#include "Rotor.h"
+#include "Reflector.h"
+#include "config.h"
+#include "utils.h"
 
 using Enigma::EnigmaMachine;
 using Enigma::PlugBoard;
@@ -20,6 +18,14 @@ Enigma::EnigmaMachine::EnigmaMachine(const MACHINE_CONFIG* m_config) {
     rotor3 = new Rotor{m_config->rotor_config_3};
 
     reflector = new Reflector{m_config->reflector_config};
+}
+
+Enigma::EnigmaMachine::~EnigmaMachine() {
+    delete plugboard;
+    delete rotor1;
+    delete rotor2;
+    delete rotor3;
+    delete reflector;
 }
 
 char Enigma::EnigmaMachine::encrypt(const char character) {

@@ -1,6 +1,6 @@
-#include "src/Enigma/headers/PlugBoard.h"
-#include "src/Enigma/headers/utils.h"
-#include "src/Enigma/headers/config.h"
+#include "PlugBoard.h"
+#include "utils.h"
+#include "config.h"
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>

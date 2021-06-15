@@ -1,7 +1,7 @@
 #ifndef _REFLECTOR_H
 #define _REFLECTOR_H
 
-#include "src/Enigma/headers/config.h"
+#include "config.h"
 
 namespace Enigma {
     class Reflector {

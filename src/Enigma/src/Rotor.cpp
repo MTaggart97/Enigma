@@ -1,6 +1,6 @@
-#include "src/Enigma/headers/Rotor.h"
-#include "src/Enigma/headers/config.h"
-#include "src/Enigma/headers/utils.h"
+#include "Rotor.h"
+#include "config.h"
+#include "utils.h"
 #include <fstream>
 #include <iostream>
 

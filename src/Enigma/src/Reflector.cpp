@@ -1,5 +1,5 @@
-#include "src/Enigma/headers/Reflector.h"
-#include "src/Enigma/headers/config.h"
+#include "Reflector.h"
+#include "config.h"
 #include <iostream>
 #include <fstream>
 
