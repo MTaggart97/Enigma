@@ -1,5 +1,5 @@
-#include "PlugBoard.h"
-#include "config.h"
+#include "PlugBoard.hpp"
+#include "config.hpp"
 
 using Enigma::PlugBoard;
 

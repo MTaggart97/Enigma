@@ -1,8 +1,6 @@
-#include "Rotor.h"
-#include "config.h"
-#include "utils.h"
-#include <fstream>
-#include <iostream>
+#include "Rotor.hpp"
+#include "config.hpp"
+#include "utils.hpp"
 
 using Enigma::Rotor;
 

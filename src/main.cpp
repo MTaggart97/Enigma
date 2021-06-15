@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Enigma/headers/PlugBoard.h"
-#include "Enigma/headers/Rotor.h"
-#include "Enigma/headers/Reflector.h"
-#include "Enigma/headers/EnigmaMachine.h"
-#include "config.h"
+#include "Enigma/headers/PlugBoard.hpp"
+#include "Enigma/headers/Rotor.hpp"
+#include "Enigma/headers/Reflector.hpp"
+#include "Enigma/headers/EnigmaMachine.hpp"
+#include "config.hpp"
 
 using Enigma::EnigmaMachine;
 

@@ -1,10 +1,10 @@
 #ifndef _ENIGMA_MACHINE_H
 #define _ENIGMA_MACHINE_H
 
-#include "config.h"
-#include "PlugBoard.h"
-#include "Rotor.h"
-#include "Reflector.h"
+#include "config.hpp"
+#include "PlugBoard.hpp"
+#include "Rotor.hpp"
+#include "Reflector.hpp"
 
 using Enigma::PlugBoard;
 using Enigma::Rotor;

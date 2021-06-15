@@ -1,12 +1,8 @@
-#include "PlugBoard.h"
-#include "utils.h"
-#include "config.h"
-#include <iostream>
-#include <fstream>
+#include "PlugBoard.hpp"
+#include "utils.hpp"
+#include "config.hpp"
 #include <stdlib.h>
 
-using std::cout;
-using std::endl;
 using Enigma::PlugBoard;
 
 Enigma::PlugBoard::PlugBoard(const PLUGBOARD_CONFIG* p_config) noexcept(false) {

@@ -1,7 +1,7 @@
 #ifndef _ROTOR_H
 #define _ROTOR_H
 
-#include "config.h"
+#include "config.hpp"
 
 namespace Enigma {
     class Rotor {

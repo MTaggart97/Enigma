@@ -2,7 +2,7 @@
 #define _PLUGBOARD_H
 
 #include <cstddef>
-#include "config.h"
+#include "config.hpp"
 
 namespace Enigma {
     class PlugBoard {

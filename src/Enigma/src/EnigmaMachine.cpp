@@ -1,9 +1,9 @@
-#include "EnigmaMachine.h"
-#include "PlugBoard.h"
-#include "Rotor.h"
-#include "Reflector.h"
-#include "config.h"
-#include "utils.h"
+#include "EnigmaMachine.hpp"
+#include "PlugBoard.hpp"
+#include "Rotor.hpp"
+#include "Reflector.hpp"
+#include "config.hpp"
+#include "utils.hpp"
 
 using Enigma::EnigmaMachine;
 using Enigma::PlugBoard;

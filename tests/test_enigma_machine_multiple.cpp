@@ -1,5 +1,5 @@
-#include "config.h"
-#include "EnigmaMachine.h"
+#include "config.hpp"
+#include "EnigmaMachine.hpp"
 
 using Enigma::EnigmaMachine;
 

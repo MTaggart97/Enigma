@@ -1,5 +1,5 @@
-#include "Reflector.h"
-#include "config.h"
+#include "Reflector.hpp"
+#include "config.hpp"
 
 using Enigma::Reflector;
 

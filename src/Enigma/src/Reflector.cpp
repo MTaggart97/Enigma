@@ -1,10 +1,6 @@
-#include "Reflector.h"
-#include "config.h"
-#include <iostream>
-#include <fstream>
+#include "Reflector.hpp"
+#include "config.hpp"
 
-using std::cout;
-using std::endl;
 using Enigma::Reflector;
 
 Enigma::Reflector::Reflector(const REFLECTOR_CONFIG* r_config) noexcept(false) {
