@@ -1,11 +1,10 @@
 #include "src/Enigma/headers/config.h"
 #include "src/Enigma/headers/EnigmaMachine.h"
-#include <iostream>
 
 using Enigma::EnigmaMachine;
 
 int main() {
-    PLUGBOARD_CONFIG plugboard_config = PLUGBOARD;
+    PLUGBOARD_CONFIG plugboard_config = PLUGBOARD_MISSING;
     ROTOR_CONFIG rotor_config_1 = ENIGMA_ROTOR_1;
     ROTOR_CONFIG rotor_config_2 = ENIGMA_ROTOR_2;
     ROTOR_CONFIG rotor_config_3 = ENIGMA_ROTOR_3;
@@ -14,9 +13,11 @@ int main() {
 
     EnigmaMachine machine{&m_config};
 
-    char x = machine.encrypt('a');
+    char w = machine.encrypt('a');
+    char u = machine.encrypt('a');
+    char p = machine.encrypt('a');
+    char h = machine.encrypt('a');
+    char n = machine.encrypt('a');
 
-    std::cout << x << std::endl;
-
-    return x != 'x';
+    return (w != 'w' || u != 'u' || p != 'p' || h != 'h' || n != 'n');
 }
