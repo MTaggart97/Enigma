@@ -56,5 +56,3 @@ char Enigma::EnigmaMachine::encrypt(const char character) {
     result = plugboard->get(result);
     return result;
 }
-
-// TODO: Create a destructor that destroys the plugboard, rotors and reflector
