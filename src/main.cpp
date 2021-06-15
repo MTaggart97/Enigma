@@ -1,12 +1,21 @@
 #include <iostream>
 #include "Enigma/headers/PlugBoard.h"
+#include "Enigma/headers/Rotor.h"
+#include "Enigma/headers/Reflector.h"
+#include "Enigma/headers/EnigmaMachine.h"
 #include "src/Enigma/headers/config.h"
 
-using Enigma::PlugBoard;
+using Enigma::EnigmaMachine;
 
 int main(const int , const char**) {
-    PLUGBOARD_CONFIG p_config = PLUGBOARD;
-    PlugBoard* pb = new PlugBoard(&p_config);
+    PLUGBOARD_CONFIG plugboard_config = PLUGBOARD;
+    ROTOR_CONFIG rotor_config_1 = ENIGMA_ROTOR_1;
+    ROTOR_CONFIG rotor_config_2 = ENIGMA_ROTOR_2;
+    ROTOR_CONFIG rotor_config_3 = ENIGMA_ROTOR_3;
+    REFLECTOR_CONFIG reflector_config = REFLECTOR_B;
+    MACHINE_CONFIG m_config = { &plugboard_config, &rotor_config_1, &rotor_config_2, &rotor_config_3, &reflector_config };
+
+    EnigmaMachine machine{&m_config};
 
     std::string text;
     for(;;) {
@@ -20,10 +29,8 @@ int main(const int , const char**) {
                 std::cout << "'\\' detected, exiting..." << std::endl;
                 return 0;
             }
-            std::cout << pb->get(text.at(i));
+            std::cout << machine.encrypt(text.at(i));
         }
         std::cout << std::endl;
     }
-
-    delete pb;
 }

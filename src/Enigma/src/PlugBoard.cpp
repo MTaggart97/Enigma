@@ -25,7 +25,7 @@ Enigma::PlugBoard::PlugBoard(const PLUGBOARD_CONFIG* p_config) noexcept(false) {
 }
 
 char Enigma::PlugBoard::get(const char x) {
-    for (int i = 0; i < length; i++) {
+    for (size_t i = 0; i < length; i++) {
         if (plugboard[i][0] == x) {
             return plugboard[i][1];
         } else if (plugboard[i][1] == x) {
