@@ -1,5 +1,6 @@
 #include "src/Enigma/headers/Rotor.h"
 #include "src/Enigma/headers/config.h"
+#include <iostream>
 
 using Enigma::Rotor;
 
@@ -9,8 +10,8 @@ int main() {
 
     // Rotate 3 times
     char e = rotor1.encrypt('a', false);
-    char m = rotor1.encrypt('c', true);
-    char w = rotor1.encrypt('o', false);
+    char f = rotor1.encrypt('c', true);
+    char h = rotor1.encrypt('o', false);
 
-    return (e != 'e' || m != 'm'  || w != 'w');
+    return (e != 'e' || f != 'f'  || h != 'h');
 }

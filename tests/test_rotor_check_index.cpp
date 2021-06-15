@@ -14,5 +14,5 @@ int main() {
     rotor1.encrypt('a', true);
     int p3 = rotor1.get_index('a');
 
-    return (p1 != 20 || p2 != 21  || p3 != 22);
+    return (p1 != 0 || p2 != 25 || p3 != 24);
 }

@@ -44,17 +44,38 @@ namespace Enigma {
          */
         bool on_notch();
         /**
-         * Get the index of a given character in the rotor.
-         * This takes into account the rotation of the rotor.
-         * Returns the length of the rotor if the character
-         * is not found
+         * Get the index of a given character in the alphabet. 
+         * This takes into account the rotation of the rotor. 
          * 
          * @param   c   Character to get index of
-         * @return  The index of the character
+         * @return      The index of the character
          */
         int get_index(char c);
-
+        /**
+         * Gets the character in the alphabet taking into
+         * account the rotation of the rotor.
+         * 
+         * @param   pos Position to get character from
+         * @return      The character in that position
+         */
         char get(int pos);
+        /**
+         * Encrypts the given character in the reverse 
+         * direction. This takes into account the 
+         * rotation of the rotor.
+         * 
+         * @param   c   Character to encrypt
+         * @return      The encrypted character
+         */
+        char reverse(char c);
+        /**
+         * Simply encrypts the given character. Does
+         * not attempt to rotate the rotor.
+         *
+         * @param   c   Character to encrypt
+         * @return      Encrypted character
+         */
+        char quick_encrypt(const char c);
     };
 }
 
