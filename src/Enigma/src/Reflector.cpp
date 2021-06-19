@@ -1,10 +1,6 @@
-#include "src/Enigma/headers/Reflector.h"
-#include "src/Enigma/headers/config.h"
-#include <iostream>
-#include <fstream>
+#include "Reflector.hpp"
+#include "config.hpp"
 
-using std::cout;
-using std::endl;
 using Enigma::Reflector;
 
 Enigma::Reflector::Reflector(const REFLECTOR_CONFIG* r_config) noexcept(false) {
@@ -17,7 +13,7 @@ Enigma::Reflector::Reflector(const REFLECTOR_CONFIG* r_config) noexcept(false) {
     }
 }
 
-char Enigma::Reflector::get(const char x) {
+char Enigma::Reflector::encrypt(const char x) {
     for (int i = 0; i < 13; i++) {
         if (rotor[i][0] == x) {
             return rotor[i][1];

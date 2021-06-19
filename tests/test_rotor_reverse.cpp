@@ -1,5 +1,5 @@
-#include "src/Enigma/headers/Rotor.h"
-#include "src/Enigma/headers/config.h"
+#include "Rotor.hpp"
+#include "config.hpp"
 
 using Enigma::Rotor;
 

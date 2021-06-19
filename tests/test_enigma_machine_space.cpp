@@ -4,7 +4,7 @@
 using Enigma::EnigmaMachine;
 
 int main() {
-    PLUGBOARD_CONFIG plugboard_config = PLUGBOARD_MISSING;
+    PLUGBOARD_CONFIG plugboard_config = PLUGBOARD;
     ROTOR_CONFIG rotor_config_1 = ENIGMA_ROTOR_1;
     ROTOR_CONFIG rotor_config_2 = ENIGMA_ROTOR_2;
     ROTOR_CONFIG rotor_config_3 = ENIGMA_ROTOR_3;
@@ -13,11 +13,9 @@ int main() {
 
     EnigmaMachine machine{&m_config};
 
-    char w = machine.encrypt('a');
-    char u = machine.encrypt('a');
-    char p = machine.encrypt('a');
-    char h = machine.encrypt('a');
-    char n = machine.encrypt('a');
+    char s1 = machine.encrypt(' ');
+    char s2 = machine.encrypt(' ');
+    char s3 = machine.encrypt(' ');
 
-    return (w != 'w' || u != 'u' || p != 'p' || h != 'h' || n != 'n');
+    return (s1 != ' ' || s2 != ' ' || s3 != ' ');
 }

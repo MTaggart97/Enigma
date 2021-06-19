@@ -1,6 +1,5 @@
-#include "src/Enigma/headers/config.h"
-#include "src/Enigma/headers/EnigmaMachine.h"
-#include <iostream>
+#include "config.hpp"
+#include "EnigmaMachine.hpp"
 
 using Enigma::EnigmaMachine;
 
@@ -32,7 +31,6 @@ int main() {
 
     for (size_t i = 0; i < 97; i++) {
         actual[i] = machine.encrypt('a');
-        std::cout << expected[i] << ", " << actual[i] << std::endl;
     }
     
     bool res = false;

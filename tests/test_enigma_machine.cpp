@@ -1,6 +1,5 @@
-#include "src/Enigma/headers/config.h"
-#include "src/Enigma/headers/EnigmaMachine.h"
-#include <iostream>
+#include "config.hpp"
+#include "EnigmaMachine.hpp"
 
 using Enigma::EnigmaMachine;
 
@@ -15,8 +14,6 @@ int main() {
     EnigmaMachine machine{&m_config};
 
     char x = machine.encrypt('a');
-
-    std::cout << x << std::endl;
 
     return x != 'x';
 }

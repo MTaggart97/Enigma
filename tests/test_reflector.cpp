@@ -1,5 +1,5 @@
-#include "src/Enigma/headers/Reflector.h"
-#include "src/Enigma/headers/config.h"
+#include "Reflector.hpp"
+#include "config.hpp"
 
 using Enigma::Reflector;
 
@@ -7,8 +7,8 @@ int main() {
     REFLECTOR_CONFIG r_config = REFLECTOR;
     Reflector r{&r_config};
 
-    char b = r.get('a');
-    char w = r.get('x');
+    char b = r.encrypt('a');
+    char w = r.encrypt('x');
 
     return (b != 'b' || w != 'w');
 }

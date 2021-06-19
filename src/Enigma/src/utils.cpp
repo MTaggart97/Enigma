@@ -1,4 +1,4 @@
-#include "src/Enigma/headers/utils.h"
+#include "utils.hpp"
 
 int Enigma::Utils::char_to_int(const char c) {
     return ((int) c) - 97;

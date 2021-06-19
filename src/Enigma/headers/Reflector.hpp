@@ -1,7 +1,7 @@
 #ifndef _REFLECTOR_H
 #define _REFLECTOR_H
 
-#include "src/Enigma/headers/config.h"
+#include "config.hpp"
 
 namespace Enigma {
     class Reflector {
@@ -20,7 +20,7 @@ namespace Enigma {
          * @param   char    Input character
          * @return  Transformed character
          */
-        char get(const char);
+        char encrypt(const char);
     };
 }
 
