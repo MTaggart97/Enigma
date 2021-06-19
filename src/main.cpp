@@ -60,6 +60,16 @@ int main(const int argc, const char** argv) {
                 rotor_config_1 = ENIGMA_ROTOR_2;
             } else if (arg == "3") {
                 rotor_config_1 = ENIGMA_ROTOR_3;
+            } else if (arg == "4") {
+                rotor_config_1 = ENIGMA_ROTOR_4;
+            } else if (arg == "5") {
+                rotor_config_1 = ENIGMA_ROTOR_5;
+            } else if (arg == "6") {
+                rotor_config_1 = ENIGMA_ROTOR_6;
+            } else if (arg == "7") {
+                rotor_config_1 = ENIGMA_ROTOR_7;
+            } else if (arg == "8") {
+                rotor_config_1 = ENIGMA_ROTOR_8;
             }
         } else if (arg == "-r2") {
             arg = argv[++i];    // Rotor 2
@@ -67,6 +77,16 @@ int main(const int argc, const char** argv) {
                 rotor_config_2 = ENIGMA_ROTOR_1;
             } else if (arg == "3") {
                 rotor_config_2 = ENIGMA_ROTOR_3;
+            } else if (arg == "4") {
+                rotor_config_1 = ENIGMA_ROTOR_4;
+            } else if (arg == "5") {
+                rotor_config_1 = ENIGMA_ROTOR_5;
+            } else if (arg == "6") {
+                rotor_config_1 = ENIGMA_ROTOR_6;
+            } else if (arg == "7") {
+                rotor_config_1 = ENIGMA_ROTOR_7;
+            } else if (arg == "8") {
+                rotor_config_1 = ENIGMA_ROTOR_8;
             }
         } else if (arg == "-r3") {
             arg = argv[++i];    // Rotor 3
@@ -74,11 +94,25 @@ int main(const int argc, const char** argv) {
                 rotor_config_3 = ENIGMA_ROTOR_1;
             } else if (arg == "2") {
                 rotor_config_3 = ENIGMA_ROTOR_2;
+            } else if (arg == "4") {
+                rotor_config_1 = ENIGMA_ROTOR_4;
+            } else if (arg == "5") {
+                rotor_config_1 = ENIGMA_ROTOR_5;
+            } else if (arg == "6") {
+                rotor_config_1 = ENIGMA_ROTOR_6;
+            } else if (arg == "7") {
+                rotor_config_1 = ENIGMA_ROTOR_7;
+            } else if (arg == "8") {
+                rotor_config_1 = ENIGMA_ROTOR_8;
             }
         } else if (arg == "-refl") {
             arg = argv[++i];    // Reflector
             if (arg == "S") {
                 reflector_config = REFLECTOR;
+            } else if (arg == "A") {
+                reflector_config = REFLECTOR_A;
+            } else if (arg == "C") {
+                reflector_config = REFLECTOR_C;
             }
         }
     }
