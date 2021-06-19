@@ -9,10 +9,12 @@ int main() {
 
     // Rotate 16 times, i.e. one before the notch
     for (int i = 0; i < 16; i++) {
-        rotor1.encrypt('a', true);
+        rotor1.rotate(true);
+        rotor1.encrypt('a');
     }
     bool not_notched = rotor1.on_notch();
-    rotor1.encrypt('a', true);
+    rotor1.rotate(true);
+    rotor1.encrypt('a');
     bool notched = rotor1.on_notch();
 
     return !notched || not_notched;

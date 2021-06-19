@@ -21,22 +21,21 @@ namespace Enigma {
          * rotors position.
          */
         int counter;
-        /**
-         * Rotates the rotor.
-         */
-        void rotate();
     public:
         Rotor(const ROTOR_CONFIG*) noexcept(false);
         /**
-         * Given a character, encode it using this rotor. If
-         * the second parameter is true, the rotor will
-         * rotate.
+         * Given a character, encode it using this rotor.
          * 
          * @param   char    Character to encrypt
-         * @param   bool    Wether or not to rotate
          * @return  Encrypted character
          */
-        char encrypt(const char, const bool);
+        char encrypt(const char);
+        /**
+         * Rotates the rotor if parameter is true.
+         *
+         * @param   bool    Flag that determines if to rotate
+         */
+        void rotate(bool);
         /**
          * Checks if the rotor is on the notch or not.
          * 
@@ -52,30 +51,15 @@ namespace Enigma {
          */
         int get_index(char c);
         /**
-         * Gets the character in the alphabet taking into
-         * account the rotation of the rotor.
-         * 
-         * @param   pos Position to get character from
-         * @return      The character in that position
-         */
-        char get(int pos);
-        /**
          * Encrypts the given character in the reverse 
          * direction. This takes into account the 
-         * rotation of the rotor.
+         * rotation of the rotor. It returns the character
+         * of the aplhabet in the position of the rotor.
          * 
          * @param   c   Character to encrypt
          * @return      The encrypted character
          */
         char reverse(char c);
-        /**
-         * Simply encrypts the given character. Does
-         * not attempt to rotate the rotor.
-         *
-         * @param   c   Character to encrypt
-         * @return      Encrypted character
-         */
-        char quick_encrypt(const char c);
     };
 }
 

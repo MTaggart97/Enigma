@@ -15,23 +15,19 @@ Rotor::Rotor(const ROTOR_CONFIG* r_config) {
     counter = r_config->offset;
 }
 
-char Rotor::encrypt(const char c, const bool to_rotate) {
-    blocked = true;
-    if (to_rotate || (counter == notch-1)) rotate();
+char Rotor::encrypt(const char c) {
     // Ensure index is > 0 and < 26
     int index = (26 + (Enigma::Utils::char_to_int(c) + counter) % 26) % 26;
-    char ch = rotor[index];
-    return ch;
-}
-
-char Rotor::quick_encrypt(const char c) {
-    int index = (26 + (Enigma::Utils::char_to_int(c)) % 26) % 26;
     return rotor[index];
 }
 
-void Rotor::rotate() {
-    counter = (counter+1) % 26;
-    blocked = false;
+void Rotor::rotate(const bool flag) {
+    if (flag || (counter == notch-1)) {
+        counter = (counter+1) % 26;
+        blocked = false;
+    } else {
+        blocked = true;
+    }
 }
 
 bool Rotor::on_notch() {
@@ -50,10 +46,6 @@ int Rotor::get_index(char c) {
     return pos;
 }
 
-char Rotor::get(int pos) {
-    return Enigma::Utils::int_to_char((26 + (pos + counter) % 26) % 26);
-}
-
 char Rotor::reverse(char c) {
     char actual_char = 97 + ((26 + (Enigma::Utils::char_to_int(c) + counter) % 26) % 26);
     int pos = 0;
@@ -63,5 +55,5 @@ char Rotor::reverse(char c) {
         }
         pos++;
     }
-    return 97 + pos;
+    return Enigma::Utils::int_to_char(get_index(97 + pos));
 }

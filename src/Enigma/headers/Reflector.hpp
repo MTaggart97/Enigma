@@ -20,7 +20,7 @@ namespace Enigma {
          * @param   char    Input character
          * @return  Transformed character
          */
-        char get(const char);
+        char encrypt(const char);
     };
 }
 

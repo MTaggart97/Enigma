@@ -8,9 +8,10 @@ int main() {
     Rotor rotor1{&r_config};
 
     char a = rotor1.reverse('e');
-    rotor1.encrypt('a', true);
-    // After rotate, q -> r -> x
-    char x = rotor1.reverse('q');
+    rotor1.rotate(true);
+    rotor1.encrypt('a');
+    // After rotate, q -> r -> x -> w
+    char w = rotor1.reverse('q');
 
-    return (a != 'a' || x != 'x');
+    return (a != 'a' || w != 'w');
 }

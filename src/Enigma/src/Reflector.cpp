@@ -13,7 +13,7 @@ Enigma::Reflector::Reflector(const REFLECTOR_CONFIG* r_config) noexcept(false) {
     }
 }
 
-char Enigma::Reflector::get(const char x) {
+char Enigma::Reflector::encrypt(const char x) {
     for (int i = 0; i < 13; i++) {
         if (rotor[i][0] == x) {
             return rotor[i][1];

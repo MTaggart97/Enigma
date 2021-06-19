@@ -8,9 +8,9 @@ int main() {
     Rotor rotor1{&r_config};
 
     // Rotate 3 times
-    char e = rotor1.encrypt('a', false);
-    char m = rotor1.encrypt('c', false);
-    char y = rotor1.encrypt('o', false);
+    char e = rotor1.encrypt('a');
+    char m = rotor1.encrypt('c');
+    char y = rotor1.encrypt('o');
 
     return (e != 'e' || m != 'm'  || y != 'y');
 }
