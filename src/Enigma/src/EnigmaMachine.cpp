@@ -29,10 +29,10 @@ Enigma::EnigmaMachine::~EnigmaMachine() {
 }
 
 char Enigma::EnigmaMachine::encrypt(const char character) {
-    char result = plugboard->get(character);
-    if (result == ' ') {
-        return result;
+    if (character == ' ' || character == '\n' || character == '.') {
+        return character;
     }
+    char result = plugboard->get(character);
 
     // First Pass Through
     rotor1->rotate(true);

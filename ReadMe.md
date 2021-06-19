@@ -26,3 +26,13 @@ The following are nice to haves but are not the main goals of this project
 - [ ] ~~Machine should be configurable using JSON (or some other structured file format)~~
   - [x] Configure using command line
 - [x] Inputting encrypted text into a machine with the same configuration should result in the plain text being returned
+
+## Usage
+
+```bash
+./build/Enigma -f test.txt -d encrypted.txt
+./build/Enigma -f test.txt
+./build/Enigma hello
+./build/Enigma "hello there"    # Use quotes for more than one word
+./build/Enigma -r1 2 -r2 4 -relf A "hello there"
+```
